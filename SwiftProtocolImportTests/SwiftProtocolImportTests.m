@@ -7,31 +7,23 @@
 //
 
 #import <XCTest/XCTest.h>
-
+#import "SomeObjectiveCClass.h"
+#import "SomeObjectiveCClassWithError.h"
 @interface SwiftProtocolImportTests : XCTestCase
 
 @end
 
 @implementation SwiftProtocolImportTests
 
-- (void)setUp {
-    // Put setup code here. This method is called before the invocation of each test method in the class.
-}
-
-- (void)tearDown {
-    // Put teardown code here. This method is called after the invocation of each test method in the class.
-}
-
 - (void)testExample {
-    // This is an example of a functional test case.
-    // Use XCTAssert and related functions to verify your tests produce the correct results.
+    SomeObjectiveCClass *anInstance = [[SomeObjectiveCClass alloc] init];
+    [anInstance someMethod];
+    [anInstance someMethodOnObjCProtocol];
+
+    SomeObjectiveCClassWithError *anotherInstance = [[SomeObjectiveCClassWithError alloc] init];
+    [anotherInstance someMethod];
+    [anotherInstance someMethodOnObjCProtocol];
 }
 
-- (void)testPerformanceExample {
-    // This is an example of a performance test case.
-    [self measureBlock:^{
-        // Put the code you want to measure the time of here.
-    }];
-}
 
 @end
